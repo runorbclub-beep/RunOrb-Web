@@ -1,0 +1,68 @@
+{
+  "name": "runorb-agent",
+  "version": "1.0.0",
+  "description": "RunOrb Agent - 蓝牙设备桥接应用",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "dev": "tsx watch src/main/index.ts",
+    "build": "tsc",
+    "start": "node dist/main/index.js",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"npm run build\" \"electron .\" \"wait-on http://localhost:8081 && electron . --dev\"",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": [
+    "runorb",
+    "bluetooth",
+    "agent",
+    "electron"
+  ],
+  "author": "RunOrb Team",
+  "license": "MIT",
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/ws": "^8.5.0",
+    "typescript": "^5.0.0",
+    "tsx": "^4.0.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^24.0.0",
+    "concurrently": "^8.0.0",
+    "wait-on": "^7.0.0"
+  },
+  "build": {
+    "appId": "com.runorb.agent",
+    "productName": "RunOrb Agent",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.health",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  }
+}
