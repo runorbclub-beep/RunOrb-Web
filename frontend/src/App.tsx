@@ -6,6 +6,7 @@ import CompetePage from './pages/CompetePage'
 import PKPage from './pages/PKPage'
 import MyDataPage from './pages/MyDataPage'
 import RankingPage from './pages/RankingPage'
+import DownloadPage from './pages/DownloadPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/pk" element={<PKPage />} />
         <Route path="/mydata" element={<MyDataPage />} />
         <Route path="/ranking" element={<RankingPage />} />
+        <Route path="/download" element={<DownloadPage />} />
       </Routes>
     </Router>
   )

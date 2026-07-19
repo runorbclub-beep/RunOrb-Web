@@ -102,7 +102,9 @@ export default function HomePage() {
           </ol>
           <div className="mt-4">
             <a
-              href="#"
+              href="https://github.com/runorbclub-beep/RunOrb-Web#agent-下载"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-colors"
             >
               📥 下载 Agent
