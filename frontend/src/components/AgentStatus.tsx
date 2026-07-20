@@ -1,6 +1,7 @@
 // Agent 连接状态指示器
 import { useEffect, useState } from 'react'
 import { agentClient } from '../lib/agent'
+import { Link } from 'react-router-dom'
 
 export function AgentStatus() {
   const [connected, setConnected] = useState(false)
@@ -38,7 +39,7 @@ export function AgentStatus() {
     <div className="flex items-center gap-2 px-3 py-1.5 bg-yellow-500/20 rounded-full">
       <div className="w-2 h-2 bg-yellow-500 rounded-full" />
       <span className="text-sm text-yellow-400">
-        Agent 未连接 - <a href="#" className="underline">点击下载</a>
+        Agent 未连接 - <Link to="/download" className="underline hover:text-white">点击下载</Link>
       </span>
     </div>
   )
